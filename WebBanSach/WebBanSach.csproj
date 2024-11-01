@@ -1,0 +1,308 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD4CDD82-0C8A-4439-B323-1C0A4F727C30}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebBanSach</RootNamespace>
+    <AssemblyName>WebBanSach</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44335</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\templatemo_style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\01.jpg" />
+    <Content Include="Images\130318.jpg" />
+    <Content Include="Images\130499.jpg" />
+    <Content Include="Images\Autumn Leaves.jpg" />
+    <Content Include="Images\Gt_Thcb.jpg" />
+    <Content Include="Images\Humpback Whale.jpg" />
+    <Content Include="Images\images\bg_menu_top.jpg" />
+    <Content Include="Images\images\Cancel.jpg" />
+    <Content Include="Images\images\Chot.jpg" />
+    <Content Include="Images\images\Delete.jpg" />
+    <Content Include="Images\images\Dongho.swf" />
+    <Content Include="Images\images\Edit.png" />
+    <Content Include="Images\images\Fristi.gif" />
+    <Content Include="Images\images\Giohang.gif" />
+    <Content Include="Images\images\heart.jpg" />
+    <Content Include="Images\images\icon_list.jpg" />
+    <Content Include="Images\images\MISC26.ICO" />
+    <Content Include="Images\images\MISC27.ICO" />
+    <Content Include="Images\images\muitendo.gif" />
+    <Content Include="Images\images\nenxanh_cottrai.gif" />
+    <Content Include="Images\images\Nen_banner.jpg" />
+    <Content Include="Images\images\new.jpg" />
+    <Content Include="Images\images\nut_chonmua.gif" />
+    <Content Include="Images\images\Omo.gif" />
+    <Content Include="Images\images\QC01.gif" />
+    <Content Include="Images\images\QC02.gif" />
+    <Content Include="Images\images\QC03.gif" />
+    <Content Include="Images\images\QC04.gif" />
+    <Content Include="Images\images\Save.jpg" />
+    <Content Include="Images\images\Sotien.gif" />
+    <Content Include="Images\images\Thoitrang.gif" />
+    <Content Include="Images\images\tittle_sachmoi.gif" />
+    <Content Include="Images\images\Trungthu.gif" />
+    <Content Include="Images\images\xehang.gif" />
+    <Content Include="Images\Kt.jpg" />
+    <Content Include="Images\KT0001.jpg" />
+    <Content Include="Images\KT0002.jpg" />
+    <Content Include="Images\KT0003.jpg" />
+    <Content Include="Images\KT0004.jpg" />
+    <Content Include="Images\KT0005.jpg" />
+    <Content Include="Images\KT0006.jpg" />
+    <Content Include="Images\KT0007.jpg" />
+    <Content Include="Images\KT0008.jpg" />
+    <Content Include="Images\KT0009.jpg" />
+    <Content Include="Images\LTWeb2005.jpg" />
+    <Content Include="Images\Me.jpg" />
+    <Content Include="Images\Oracle.jpg" />
+    <Content Include="Images\Oryx Antelope.jpg" />
+    <Content Include="Images\P0001.jpg" />
+    <Content Include="Images\P_0001.jpg" />
+    <Content Include="Images\Sample.jpg" />
+    <Content Include="Images\templatemo_ads.jpg" />
+    <Content Include="Images\templatemo_bg.jpg" />
+    <Content Include="Images\templatemo_btn_01.jpg" />
+    <Content Include="Images\templatemo_btn_02.jpg" />
+    <Content Include="Images\templatemo_footer_bg.jpg" />
+    <Content Include="Images\templatemo_h1_bg.jpg" />
+    <Content Include="Images\templatemo_header_bg.jpg" />
+    <Content Include="Images\templatemo_header_bg_blank.jpg" />
+    <Content Include="Images\templatemo_image_01.jpg" />
+    <Content Include="Images\templatemo_image_02.jpg" />
+    <Content Include="Images\templatemo_image_03.jpg" />
+    <Content Include="Images\templatemo_image_04.jpg" />
+    <Content Include="Images\templatemo_menu_bg.jpg" />
+    <Content Include="Images\TH001.jpg" />
+    <Content Include="Images\TH002.jpg" />
+    <Content Include="Images\TH003.jpg" />
+    <Content Include="Images\TH004.jpg" />
+    <Content Include="Images\TH005.jpg" />
+    <Content Include="Images\TH006.jpg" />
+    <Content Include="Images\TH007.jpg" />
+    <Content Include="Images\TH008.jpg" />
+    <Content Include="Images\THCB.jpg" />
+    <Content Include="Images\TiengAnh01.jpg" />
+    <Content Include="Models\QLBanSachModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBanSachModel.edmx</DependentUpon>
+      <LastGenOutput>QLBanSachModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QLBanSachModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBanSachModel.edmx</DependentUpon>
+      <LastGenOutput>QLBanSachModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHUDE.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTDATHANG.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTTHAMDO.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DONDATHANG.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHAXUATBAN.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLBanSachModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBanSachModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLBanSachModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLBanSachModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBanSachModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QUANGCAO.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SACH.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TACGIA.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\THAMDO.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VIETSACH.cs">
+      <DependentUpon>QLBanSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <EntityDeploy Include="Models\QLBanSachModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLBanSachModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLBanSachModel.edmx.diagram">
+      <DependentUpon>QLBanSachModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Images\Thumbs.db" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\ChuDe.cshtml" />
+    <Content Include="Views\Home\NhaXuatBan.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62459</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44335/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

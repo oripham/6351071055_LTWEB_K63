@@ -1,0 +1,32 @@
+﻿
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>CHỦ ĐỀ: @ViewBag.title</h2>
+@if (ViewBag.sachList != null && ViewBag.sachList.Count > 0)
+{
+    foreach (var book in ViewBag.sachList)
+    {
+        <div class="templatemo_product_box">
+            <h1>@(book.Tensach?.Length > 30 ? book.Tensach.Substring(0, 30) + "...": book.Tensach)<span>(@book.Donvitinh)</span></h1>
+            <img src="~/Images/@book.Hinhminhhoa" alt="@book.Tensach" />
+            <div class="product_info">
+                <p>
+                    @(book.Mota?.Length > 50 ? book.Mota.Substring(0, 50) + "..." : book.Mota)
+                </p>
+                <h3>@book.Dongia</h3>
+                <div class="buy_now_button"><a href="/Purchase?bookId=@book.Masach">Buy Now</a></div>
+                <div class="detail_button"><a href="@Url.Action("Detail", "Home", new { id = book.Masach})">Detail</a></div>
+            </div>
+            <div class="cleaner">&nbsp;</div>
+        </div>
+
+
+    }
+}
+else
+{
+    <p>Không có sách nào thuộc chủ đề này.</p>
+}
+
