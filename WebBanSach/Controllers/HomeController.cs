@@ -7,20 +7,14 @@ using WebBanSach.Models;
 
 namespace WebBanSach.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: Home
         private readonly QLBANSACHEntities _context = new QLBANSACHEntities();
-
-
         public ActionResult Index()
         {
-            var chudeList = _context.CHUDEs.ToList();
-            var nhaxuatbanList = _context.NHAXUATBANs.ToList();
-            var sachList = _context.SACHes.ToList();
 
-            ViewBag.chudeList = chudeList;
-            ViewBag.nhaxuatbanList = nhaxuatbanList;
+            var sachList = _context.SACHes.ToList();
             ViewBag.sachList = sachList;
 
             return View();
@@ -38,8 +32,7 @@ namespace WebBanSach.Controllers
                         .FirstOrDefault();
 
             ViewBag.sachList = sachList;
-            ViewBag.chudeList = _context.CHUDEs.ToList();
-            ViewBag.nhaxuatbanList = _context.NHAXUATBANs.ToList();
+
             return View("ChuDe");
         }
 
@@ -63,8 +56,7 @@ namespace WebBanSach.Controllers
 
         public ActionResult Detail(int id=0) 
         {
-            ViewBag.chudeList = _context.CHUDEs.ToList();
-            ViewBag.nhaxuatbanList = _context.NHAXUATBANs.ToList();
+           
 
             var book = _context.SACHes.Where(s => s.Masach == id).FirstOrDefault();
             ViewBag.book = book;

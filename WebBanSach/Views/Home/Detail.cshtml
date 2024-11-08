@@ -21,7 +21,11 @@
         </div>
     </div>
     <div class="buy_now_button" style="text-align: right; margin-top: 20px;">
-        <a href="/Purchase?bookId=@book.Masach" style="display: inline-block; padding: 10px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;">Mua Ngay</a>
+        <a href="@Url.Action("AddCart", "Cart", new { iMasach = book.Masach, strURL = Url.Action("Detail", "Home", new { id = book.Masach }) })"
+           style="display: inline-block; padding: 10px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;">
+            Mua Ngay
+        </a>
+
     </div>
     <div class="back_button" style="margin-top: 10px;">
         <a href="@Url.Action("Index", "Home")" style="text-decoration: underline; color: #007bff;">Quay lại danh sách sách</a>

@@ -1,0 +1,11 @@
+﻿<a href="@Url.Action("Cart", "Cart")" style="text-decoration: none; color: white;">
+    @{
+        if (ViewBag.TongSoLuong == null)
+        {
+            ViewBag.TongSoLuong = 0;
+        }
+
+    }
+    Cart(@ViewBag.TongSoLuong)
+
+</a>

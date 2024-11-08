@@ -16,8 +16,13 @@
                     @(book.Mota?.Length > 50 ? book.Mota.Substring(0, 50) + "..." : book.Mota)
                 </p>
                 <h3>@book.Dongia</h3>
-                <div class="buy_now_button"><a href="/Purchase?bookId=@book.Masach">Buy Now</a></div>
-                <div class="detail_button"><a href="@Url.Action("Detail", "Home", new { id = book.Masach})">Detail</a></div>
+                <div class="buy_now_button">
+                    <a href="@Url.Action("AddCart", "Cart", new { iMasach = book.Masach, strURL = Url.Action("Detail", "Home", new { id = book.Masach }) })"
+                       style="display: inline-block; padding: 5px 10px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;">
+                        Mua Ngay
+                    </a>
+                </div>
+                <div class="detail_button"><a href="@Url.Action("Detail", "Home", new { id = book.Masach})">Chi tiết</a></div>
             </div>
             <div class="cleaner">&nbsp;</div>
         </div>

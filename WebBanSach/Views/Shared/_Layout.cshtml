@@ -6,6 +6,7 @@
     <meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML" />
     <meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website" />
     <link href="~/Content/templatemo_style.css" rel="stylesheet" />
+    
 </head>
 <body>
     <!--  Free CSS Templates from www.templatemo.com -->
@@ -15,12 +16,29 @@
                 <li><a href="@Url.Action("Index", "Home")" class="current">Home</a></li>
                 <li><a href="@Url.Action("Search", "Home")">Search</a></li>
                 <li><a href="@Url.Action("Books", "Home")">Books</a></li>
-                <li><a href="@Url.Action("NewReleases", "Home")">New Releases</a></li>
-                <li><a href="@Url.Action("Company", "Home")">Company</a></li>
                 <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
+                <li>
+                    @Html.Partial("~/Views/Cart/CartPartial.cshtml")
+                </li>
 
             </ul>
-        </div> <!-- end of menu -->
+            <div style="text-align: center;">
+                <div style="text-align: center;">
+                    <!-- Sign Up Link -->
+                    <a href="@Url.Action("SignUp", "User")" style="padding: 8px 16px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin: 5px; font-size: 12px;">
+                        Sign Up
+                    </a>
+                    <!-- Sign In Link -->
+                    <a href="@Url.Action("SignIn", "User")" style="padding: 8px 16px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin: 5px; font-size: 12px;">
+                        Sign In
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end of menu -->
 
 
         <div id="templatemo_content">
@@ -43,9 +61,9 @@
                     <ul>
                         @foreach (var nhaxuatban in ViewBag.nhaxuatbanList)
                         {
-                           <li>
-                               <a href="@Url.Action("NhaXuatBan", "Home", new { maNXB = nhaxuatban.MaNXB })">@nhaxuatban.TenNXB</a>
-                           </li>
+                            <li>
+                                <a href="@Url.Action("NhaXuatBan", "Home", new { maNXB = nhaxuatban.MaNXB })">@nhaxuatban.TenNXB</a>
+                            </li>
                         }
                     </ul>
                 </div>
