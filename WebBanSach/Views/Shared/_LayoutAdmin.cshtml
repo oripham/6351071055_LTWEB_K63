@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Admin</title>
+    <meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML" />
+    <meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website" />
+    @*<link href="~/Content/templatemo_style.css" rel="stylesheet" />*@
+    <link href="@Url.Content("~/Content/templatemo_style.css")" rel="stylesheet" />
+
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+</head>
+<body>
+    <!--  Free CSS Templates from www.templatemo.com -->
+    <div id="templatemo_container">
+        <div id="templatemo_menu">
+            <ul>
+                <li><a href="@Url.Action("Index", "Admin")" class="current">Home</a></li>
+                <li><a href="@Url.Action("ManageTopic", "Admin")">Manage Topic</a></li>
+                <li><a href="@Url.Action("ManagePublisher", "Admin")">Manage Publisher</a></li>
+                <li><a href="@Url.Action("ManageBook", "Admin")">Manage Book</a></li>
+                <li><a href="@Url.Action("BookStatistics", "Admin")">Book Statistics</a></li>
+            </ul>
+            <div style="text-align: center;">
+                <div style="text-align: center;">
+                    <!-- Sign Up Link -->
+                    <a href="@Url.Action("SignUp", "Admin")" style="padding: 8px 16px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin: 5px; font-size: 12px;">
+                        Sign Up
+                    </a>
+                    <!-- Sign In Link -->
+                    <a href="@Url.Action("Login", "Admin")" style="padding: 8px 16px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin: 5px; font-size: 12px;">
+                        Sign In
+                    </a>
+                    <a href="@Url.Action("Index", "Home")" style="padding: 8px 16px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin: 5px; font-size: 12px;">
+                        User
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end of menu -->
+
+
+        <div id="templatemo_content">
+            <div>
+                @RenderBody()
+            </div>
+        </div> <!-- end of content -->
+
+        <div id="templatemo_footer">
+            <a href="index.html">Home</a> | <a href="search.html">Search</a> | <a href="books.html">Books</a> | <a href="new_releases.html">New Releases</a> | <a href="faqs.html">FAQs</a> | <a href="contact.html">Contact Us</a><br />
+            Copyright © 2048 <a href="#"><strong>Your Company Name</strong></a> | <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent" title="free css templates">Free CSS Templates</a>
+        </div>
+        <!-- end of footer -->
+        <!--  Free CSS Template www.templatemo.com -->
+    </div> <!-- end of container -->
+    <div align=center>This template downloaded from <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>
+</body>
+</html>

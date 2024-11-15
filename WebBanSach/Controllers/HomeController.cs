@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebBanSach.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WebBanSach.Controllers
 {
@@ -11,14 +13,28 @@ namespace WebBanSach.Controllers
     {
         // GET: Home
         private readonly QLBANSACHEntities _context = new QLBANSACHEntities();
-        public ActionResult Index()
+
+        private List<SACH> GetNewBooks()
         {
-
-            var sachList = _context.SACHes.ToList();
-            ViewBag.sachList = sachList;
-
-            return View();
+            return _context.SACHes.OrderByDescending(a => a.Ngaycapnhat).ToList();
         }
+
+        public ActionResult Index(int? page)
+        {
+            int pageSize = 10; 
+            int pageNum = page ?? 1;
+
+            var allBooks = GetNewBooks();
+
+            var pagedBooks = allBooks.ToPagedList(pageNum, pageSize);
+
+            ViewBag.sachList = pagedBooks;
+
+            return View(pagedBooks);
+        }
+
+
+
 
         public ActionResult ChuDe(int maCD=0)
         {

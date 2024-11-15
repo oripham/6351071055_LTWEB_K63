@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QLBANSACHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="UserAdmin" />
+    </Key>
+    <Property Name="UserAdmin" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PassAdmin" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Hoten" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="CHUDE">
     <Key>
       <PropertyRef Name="MaCD" />
@@ -219,6 +227,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="QLBANSACHModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CHUDE" EntityType="Self.CHUDE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTDATHANG" EntityType="Self.CTDATHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTTHAMDO" EntityType="Self.CTTHAMDO" Schema="dbo" store:Type="Tables" />

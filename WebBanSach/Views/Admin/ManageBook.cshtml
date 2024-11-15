@@ -1,0 +1,254 @@
+﻿@using WebBanSach.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<WebBanSach.Models.SACH>
+
+@helper Truncate(string input, int length)
+{
+    if(input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }    
+}
+
+@{
+    ViewBag.Title = "ManageBook";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QUẢN LÝ THÔNG TIN SÁCH</h2>
+
+<p>
+    @Html.ActionLink("Thêm Mới", "CreateNewBook")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Tensach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Dongia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Mota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Hinhminhhoa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaCD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaNXB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Ngaycapnhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Soluongban)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Tensach)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Dongia)
+            </td>
+            <td>
+                @Truncate(item.Mota, 100)
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.Hinhminhhoa))
+                {
+                    <img src="~/Images/@item.Hinhminhhoa" alt="Image" style="width: 100px; height: auto;" />
+                }
+                else
+                {
+                    <span>No Image</span>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaCD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNXB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaycapnhat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soluongban)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditBook", new { id = item.Masach })
+                @Html.ActionLink("Details", "DetailBook", new {id=item.Masach })
+                @Html.ActionLink("Delete", "DeleteBook", new { id = item.Masach })
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="PageInfo">
+    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+</div>
+
+<div class="MenuPage">
+    @Html.PagedListPager(Model, page => Url.Action("ManageBook", new { page = page }))
+</div>
+
+<style>
+    /*Style cho phân trang*/
+    .MenuPage {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+        .MenuPage li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+            .MenuPage li a {
+                display: inline-block;
+                padding: 8px 12px;
+                color: #007bff;
+                text-decoration: none;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+                .MenuPage li a:hover {
+                    background-color: #007bff;
+                    color: #fff;
+                }
+
+            .MenuPage li.active a {
+                background-color: #007bff;
+                color: #fff;
+                border-color: #007bff;
+                font-weight: bold;
+            }
+
+            .MenuPage li.disabled a {
+                color: #ccc;
+                cursor: not-allowed;
+            }
+
+            .MenuPage li:first-child a,
+            .MenuPage li:last-child a {
+                padding: 8px 14px;
+                font-weight: bold;
+            }
+
+    .PageInfo {
+        font-size: 16px;
+        font-weight: bold;
+        color: #007bff;
+        text-align: center;
+        margin: 15px 0;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #f8f9fa;
+        display: inline-block;
+    }
+
+        .PageInfo span {
+            color: #333;
+            font-weight: normal;
+        }
+
+
+    .product-list-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .PageInfo, .MenuPage {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .templatemo_product_box {
+        width: 100%; /* Đảm bảo các hộp sản phẩm không bị ảnh hưởng */
+        max-width: 600px; /* Giới hạn chiều rộng nếu cần */
+        margin-bottom: 20px;
+    }
+
+    .MenuPage {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* Đặt chiều rộng cho các cột */
+    .table th, .table td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #555;
+    }
+
+        /* Cột mô tả */
+        .table td:nth-child(3), .table th:nth-child(3) {
+            width: 30%; /* Giới hạn độ rộng của cột mô tả */
+        }
+
+        /* Các cột khác có chiều rộng bằng nhau */
+        .table td:not(:nth-child(3)), .table th:not(:nth-child(3)) {
+            width: 10%; /* Cài đặt chiều rộng cho các cột còn lại */
+        }
+
+    /* Điều chỉnh cho các hàng chẵn */
+    .table tr:nth-child(even) {
+        background-color: #4b4743;
+    }
+
+    /* Hiệu ứng hover */
+    .table tr:hover {
+        background-color: #3a3835;
+    }
+    p a {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+        p a:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        p a:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+    h2 {
+        text-align: center;
+        font-size: 32px;
+        color: yellow;
+        margin-bottom: 30px;
+    }
+</style>
+
+
+

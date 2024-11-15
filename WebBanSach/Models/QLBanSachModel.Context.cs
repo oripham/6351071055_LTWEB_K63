@@ -36,5 +36,6 @@ namespace WebBanSach.Models
         public DbSet<TACGIA> TACGIAs { get; set; }
         public DbSet<THAMDO> THAMDOes { get; set; }
         public DbSet<VIETSACH> VIETSACHes { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

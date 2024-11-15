@@ -72,3 +72,9 @@ D:\cs\LapTrinhWeb\WebBanSach\WebBanSach\obj\Debug\WebBanSach.csproj.CoreCompileI
 D:\cs\LapTrinhWeb\WebBanSach\WebBanSach\obj\Debug\WebBanSach.csproj.Up2Date
 D:\cs\LapTrinhWeb\WebBanSach\WebBanSach\obj\Debug\WebBanSach.dll
 D:\cs\LapTrinhWeb\WebBanSach\WebBanSach\obj\Debug\WebBanSach.pdb
+D:\cs\LapTrinhWeb\WebBanSach\WebBanSach\bin\PagedList.dll
+D:\cs\LapTrinhWeb\WebBanSach\WebBanSach\bin\PagedList.Mvc.dll
+D:\cs\LapTrinhWeb\WebBanSach\WebBanSach\bin\PagedList.xml
+D:\cs\LapTrinhWeb\WebBanSach\WebBanSach\bin\PagedList.Mvc.xml
+D:\cs\LapTrinhWeb\WebBanSach\WebBanSach\bin\Newtonsoft.Json.dll
+D:\cs\LapTrinhWeb\WebBanSach\WebBanSach\bin\Newtonsoft.Json.xml

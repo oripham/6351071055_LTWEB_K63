@@ -1,0 +1,41 @@
+﻿@using Newtonsoft.Json
+
+@{
+    ViewBag.Title = "Book Statistics";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Book Statistics by Category</h2>
+
+<canvas id="chartSach" width="400" height="200"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('chartSach').getContext('2d');
+
+    const data = @Html.Raw(JsonConvert.SerializeObject(ViewBag.ChartData));
+
+    const labels = data.map(item => item.CategoryName);
+    const values = data.map(item => item.Quantity);
+
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Number of Books',
+                data: values,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

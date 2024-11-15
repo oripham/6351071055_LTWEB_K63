@@ -6,11 +6,12 @@
 //    Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
 namespace WebBanSach.Models
 {
-    using System;
-    using System.Collections.Generic;
+    
     
     public partial class SACH
     {
@@ -24,6 +25,8 @@ namespace WebBanSach.Models
         public string Tensach { get; set; }
         public string Donvitinh { get; set; }
         public Nullable<decimal> Dongia { get; set; }
+
+        [AllowHtml] 
         public string Mota { get; set; }
         public string Hinhminhhoa { get; set; }
         public Nullable<int> MaCD { get; set; }

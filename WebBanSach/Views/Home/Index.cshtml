@@ -1,13 +1,15 @@
-﻿
+﻿@using WebBanSach.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SACH>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
 @foreach (var book in ViewBag.sachList)
 {
     <div class="templatemo_product_box">
-        <h1>@(book.Tensach?.Length > 30 ? book.Tensach.Substring(0, 30) + "...": book.Tensach)<span>(@book.Donvitinh)</span></h1>
+        <h1>@(book.Tensach?.Length > 30 ? book.Tensach.Substring(0, 30) + "..." : book.Tensach)<span>(@book.Donvitinh)</span></h1>
         <img src="~/Images/@book.Hinhminhhoa" alt="@book.Tensach" />
         <div class="product_info">
             <p>
@@ -20,12 +22,108 @@
                     Mua Ngay
                 </a>
             </div>
-            <div class="detail_button"><a href="@Url.Action("Detail", "Home", new { id = book.Masach})">Chi tiết</a></div>
+            <div class="detail_button"><a href="@Url.Action("Detail", "Home", new { id = book.Masach })">Chi tiết</a></div>
         </div>
         <div class="cleaner">&nbsp;</div>
     </div>
 
 
 }
+<div class="PageInfo">
+    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+</div>
 
+<div class="MenuPage">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+
+<style>
+    /*Style cho phân trang*/
+    .MenuPage {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+        .MenuPage li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+            .MenuPage li a {
+                display: inline-block;
+                padding: 8px 12px;
+                color: #007bff;
+                text-decoration: none;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+                .MenuPage li a:hover {
+                    background-color: #007bff;
+                    color: #fff;
+                }
+
+            .MenuPage li.active a {
+                background-color: #007bff;
+                color: #fff;
+                border-color: #007bff;
+                font-weight: bold;
+            }
+
+            .MenuPage li.disabled a {
+                color: #ccc;
+                cursor: not-allowed;
+            }
+
+            .MenuPage li:first-child a,
+            .MenuPage li:last-child a {
+                padding: 8px 14px;
+                font-weight: bold;
+            }
+
+    .PageInfo {
+        font-size: 16px;
+        font-weight: bold;
+        color: #007bff;
+        text-align: center;
+        margin: 15px 0;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #f8f9fa;
+        display: inline-block;
+    }
+
+        .PageInfo span {
+            color: #333;
+            font-weight: normal;
+        }
+
+
+    .product-list-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .PageInfo, .MenuPage {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .templatemo_product_box {
+        width: 100%; /* Đảm bảo các hộp sản phẩm không bị ảnh hưởng */
+        max-width: 600px; /* Giới hạn chiều rộng nếu cần */
+        margin-bottom: 20px;
+    }
+
+    .MenuPage {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+</style>
 
